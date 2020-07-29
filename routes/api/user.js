@@ -7,6 +7,20 @@ cryptr = new Cryptr("devnami");
 const { check } = require("express-validator");
 const { json } = require("body-parser");
 
+router.get("/contacts", (req, res) => {
+  db.User.findOne({ email: req.body.email })
+    .then((data) => {
+      let emailList = [];
+      console.log(data);
+      res.json(data);
+      data.contacts.forEach((email) => {
+        Cryptr.decrypt(email);
+        emailList.push(email);
+      });
+    })
+    .catch((err) => console.error(err));
+});
+
 router.post(
   "/",
   [
@@ -46,22 +60,22 @@ router.put(
       .isEmpty(),
   ],
   async ({ body }, res) => {
-    const salt = await bcrypt.genSalt(10);
     const contacts = [];
-    function contractPush(key, value) {
+    function contractPush(key, value, salt) {
       value = bcrypt.hash(value, salt);
-      contacts.push({ key: value });
+      return contacts.push({ key: value });
     }
-    body.info.forEach((name) => contractPush(name));
-    // json.
-    for (const [key, value] of Object.entries(body.info)) {
-      console.log(`${key}: ${value}`);
-      console.log("key:    " + key);
-      console.log("value:     " + value);
-      //   contractPush(key, value);
+    const salt = bcrypt.genSalt(10);
+
+    for (const [k, v] of Object.entries(body.info)) {
+      const keys = Object.keys(v)[0];
+      const values = Object.values(v)[0];
+      await contractPush(keys, values, salt);
     }
 
-    db.User.findOneAndUpdate(
+    console.log(contacts);
+
+    await db.User.findOneAndUpdate(
       { email: body.email },
       {
         $set: {
@@ -72,9 +86,25 @@ router.put(
       },
       { new: true }
     )
+
       .then((result) => res.json(result))
       .catch((err) => {
         res.send(err);
+      });
+  }
+);
+
+router.delete(
+  "/",
+  [check("email", "Email must be present").isEmail()],
+  async ({ body }, res) => {
+    db.User.findOneAndDelete({ email: body.email })
+      .then(async (data) => {
+        res.json(data);
+      })
+      .catch((err) => {
+        res.status(404).json({ msg: "User Does Not Exist" });
+        console.error(err);
       });
   }
 );
