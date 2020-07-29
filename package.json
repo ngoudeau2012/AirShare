@@ -1,0 +1,30 @@
+{
+  "name": "AirShare",
+  "version": "1.0.0",
+  "description": "Business Card Replacement",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngoudeau2012/AirShare.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ngoudeau2012/AirShare/issues"
+  },
+  "homepage": "https://github.com/ngoudeau2012/AirShare#readme",
+  "dependencies": {
+    "config": "^3.3.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "helmet": "^3.23.3",
+    "mongoose": "^5.9.26",
+    "morgan": "^1.10.0"
+  }
+}
