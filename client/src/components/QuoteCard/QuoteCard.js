@@ -6,7 +6,7 @@ function QuoteCard() {
     return (
         <div>
           <div></div>
-          <div className="card">
+          <div className="card" style={{marginBottom: "20px"}}>
             <div className="card-header">
             Our inspiration for today...
         </div>

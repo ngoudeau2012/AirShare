@@ -6,7 +6,7 @@ function Welcome() {
     return (
         <div>
           <div></div>
-          <div className="jumbotron">
+          <div className="jumbotron" style={{height:"320px"}} style={{marginTop:"20px"}}>
             <h1 className="display-4">Welcome to AirShare!</h1>
              <p className="lead">We're here to help you connect, network, and collaborate with the people you meet.</p>
             <hr className="my-4"/>
