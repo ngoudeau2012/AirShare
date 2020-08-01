@@ -25,9 +25,11 @@ const UserSchema = mongoose.Schema({
       message: "Email Already Taken",
     },
   },
+  password: {
+    type: String,
+  },
   info: {
     type: String,
-    unique: true,
   },
   contacts: {
     type: Array,
