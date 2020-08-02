@@ -28,8 +28,8 @@ const UserSchema = mongoose.Schema({
   password: {
     type: String,
   },
-  info: {
-    type: String,
+  information: {
+    type: Array,
   },
   contacts: {
     type: Array,

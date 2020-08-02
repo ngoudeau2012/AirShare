@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../../models");
+const { newUser } = require("../../utils/nodemailer/newUser");
+const { updateUser } = require("../../utils/nodemailer/updateUser");
+const { deleteUser } = require("../../utils/nodemailer/deleteUser");
 const Cryptr = require("cryptr");
-const email = require("../../utils/nodemailer");
 require("dotenv").config();
 cryptr = new Cryptr(`${process.env.CRYPTRPASS}`);
 const { check } = require("express-validator");
@@ -21,8 +23,8 @@ router.post(
     const password = cryptr.encrypt(body.password);
     db.User.create({ email: body.email, password: password })
       .then((result) => {
-        email.newUser(body.email, body.password);
         res.json(result);
+        newUser(body.email, body.password);
       })
       .catch((err) => {
         res.send(err);
@@ -90,32 +92,42 @@ router.put(
             }
           }
           // User Exists => Valid New Credentials => Identify Update
-          if (body.newPassword && body.newPassword) {
-            body.newPassword = cryptr.encrypt(body.newPassword);
+          if (body.newEmail && body.newPassword) {
+            const password = (body.newPassword = cryptr.encrypt(
+              body.newPassword
+            ));
             db.User.findOneAndUpdate(
               { email: body.email },
               {
                 $set: {
                   email: body.newEmail,
-                  password: body.newPassword,
+                  password: password,
                 },
               }
             )
-              .then((data) => res.json(data))
+              .then((data) => {
+                res.json(data);
+                updateUser(body.newEmail, body.newPassword);
+              })
               .catch((err) => {
                 res.status(400).json({ msg: err });
               });
           } else if (body.newPassword) {
-            body.newPassword = cryptr.encrypt(body.newPassword);
+            const password = (body.newPassword = cryptr.encrypt(
+              body.newPassword
+            ));
             db.User.findOneAndUpdate(
               { email: body.email },
               {
                 $set: {
-                  password: body.newPassword,
+                  password: password,
                 },
               }
             )
-              .then((data) => res.json(data))
+              .then((data) => {
+                res.json(data);
+                updateUser(body.email, body.newPassword);
+              })
               .catch((err) => {
                 res.status(400).json({ msg: err });
               });
@@ -128,7 +140,10 @@ router.put(
                 },
               }
             )
-              .then((data) => res.json(data))
+              .then((data) => {
+                res.json(data);
+                updateUser(body.newEmail, cryptr.decrypt(body.password));
+              })
               .catch((err) => {
                 res.status(400).json({ msg: err });
               });
@@ -143,24 +158,6 @@ router.put(
         // If No User
         res.status(400).json({ msg: err });
       });
-    // db.User.findOneAndUpdate(
-    //   { email: body.email },
-    //   {
-    //     $set: {
-    //       email: body.newEmail,
-    //     },
-    //   },
-    //   { new: true },
-    //   (err, data) => {
-    //     if (err) {
-    //       res.status(400).json({ msg: err });
-    //     } else {
-    //       res.status(200).json({ msg: data });
-    //     }
-    //   }
-    // ).catch((err) => {
-    //   res.status(400).json({ msg: err });
-    // });
   }
 );
 
@@ -172,6 +169,7 @@ router.delete(
       .then(async (data) => {
         if (data) {
           res.status(200).json({ msg: data });
+          deleteUser(data.email);
         } else {
           res.status(400).json({ msg: "User Not Found" });
         }

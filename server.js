@@ -28,6 +28,7 @@ app.use(
 db();
 // DB => API
 app.use("/api/user", require("./routes/api/user"));
+app.use("/api/accounts", require("./routes/api/accounts"));
 
 app.listen(PORT, () => {
   console.log(`PORT ${PORT}`);
