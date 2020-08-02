@@ -25,21 +25,21 @@ function HomePage() {
       <Container>
         <Row>
           <Col>
-            <Card
+            <Card 
               image={aboutus[0].image}
               idescription={aboutus[0].idescription}
               cardtext={aboutus[0].cardtext}
             />
           </Col>
           <Col>
-            <Card
+            <Card 
               image={aboutus[1].image}
               idescription={aboutus[1].idescription}
               cardtext={aboutus[1].cardtext}
             />
           </Col>
           <Col>
-            <Card
+            <Card 
               image={aboutus[2].image}
               idescription={aboutus[2].idescription}
               cardtext={aboutus[2].cardtext}
