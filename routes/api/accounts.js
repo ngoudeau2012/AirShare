@@ -5,6 +5,8 @@ const Cryptr = require("cryptr");
 require("dotenv").config();
 cryptr = new Cryptr(`${process.env.CRYPTRPASS}`);
 
+const { informationFilter } = require("../../utils/accounts/informationFilter");
+
 // Get All Information
 router.get("/:id/information", (req, res) => {
   const id = req.params.id;
@@ -13,24 +15,7 @@ router.get("/:id/information", (req, res) => {
       let arr = [{ email: data.email }];
       console.log(data.information);
       data.information.map((item) => {
-        // console.log(item[0]);
-        if (item.substring(0, 2) == "na") {
-          arr.push({ name: cryptr.decrypt(item.substring(2)) });
-        } else if (item.substring(0, 2) == "li") {
-          arr.push({ linkedIn: cryptr.decrypt(item.substring(2)) });
-        } else if (item.substring(0, 2) == "pN") {
-          arr.push({ phoneNumber: cryptr.decrypt(item.substring(2)) });
-        } else if (item.substring(0, 2) == "we") {
-          arr.push({ website: cryptr.decrypt(item.substring(2)) });
-        } else if (item.substring(0, 2) == "co") {
-          arr.push({ company: cryptr.decrypt(item.substring(2)) });
-        } else if (item.substring(0, 2) == "ph") {
-          arr.push({ photoURL: cryptr.decrypt(item.substring(2)) });
-        } else {
-          return;
-        }
-
-        //   Add additional info here
+        informationFilter(item, arr);
       });
       res.json({
         _id: id,
@@ -49,7 +34,6 @@ router.put("/:id/information", (req, res) => {
     console.log(`${key}: ${value}`);
     arr.push(`${key.substring(0, 2)}${cryptr.encrypt(value)}`);
   }
-
   db.User.findOneAndUpdate(
     {
       _id: id,
@@ -86,12 +70,9 @@ router.put("/:id/contacts/add", (req, res) => {
   db.User.findByIdAndUpdate(
     { _id: id },
     {
-      $push: {
+      $addToSet: {
         contacts: req.body.contacts,
       },
-      // $addToSet: {
-      //   contacts: req.body.contacts,
-      // },
     },
     { safe: true, upsert: true }
   )
@@ -103,7 +84,7 @@ router.put("/:id/contacts/add", (req, res) => {
     });
 });
 
-// DELETE Contacts
+// DELETE Contact
 router.put("/:id/contacts/delete", (req, res) => {
   const id = req.params.id;
   db.User.findByIdAndUpdate(
@@ -121,5 +102,25 @@ router.put("/:id/contacts/delete", (req, res) => {
     .catch((err) => {
       res.status(400).json({ msg: err });
     });
+});
+
+// GET All
+router.get("/:id/", (req, res) => {
+  const id = req.params.id;
+  db.User.findById({ _id: id }).then((data) => {
+    let infoArr = [{ email: data.email }];
+    data.information.map((item) => {
+      informationFilter(item, infoArr);
+    });
+    res
+      .json({
+        information: infoArr,
+        email: data.email,
+        contacts: data.contacts,
+      })
+      .catch((err) => {
+        res.status(400).json({ msg: err });
+      });
+  });
 });
 module.exports = router;
