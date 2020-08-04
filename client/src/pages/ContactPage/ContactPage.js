@@ -19,7 +19,7 @@ function ContactPage() {
         <Navbar/>
         <div style={{color: "white"}}>
           <br></br>
-          <h1>Let us know what's up.</h1>
+          <h1 style={{border: "10px", borderStyle: "groove", borderColor: "white"}}>Let us know what's up.</h1>
           <br></br>
         </div>
         <ContactForm/>

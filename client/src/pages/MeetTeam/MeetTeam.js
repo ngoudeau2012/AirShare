@@ -23,7 +23,7 @@ function MeetTeam() {
 
         <div style={{color: "white"}}>
           <br></br>
-          <h1>Meet our team...</h1>
+          <h1 style={{border: "10px", borderStyle: "groove", borderColor: "white"}}>Meet our team...</h1>
           <br></br>
         </div>
  
