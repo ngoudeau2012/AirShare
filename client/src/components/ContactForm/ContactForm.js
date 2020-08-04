@@ -11,7 +11,7 @@ function ContactForm () {
                 <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
             </div>
             <div className="form-group">
-                <label for="exampleFormControlSelect2" style={{color: "white"}}>Question Subject</label>
+                <label for="exampleFormControlSelect2" style={{color: "white"}}>Subject</label>
                 <select multiple className="form-control" id="exampleFormControlSelect2">
                 <option>Signing Up</option>
                 <option>Logging In</option>
