@@ -5,7 +5,7 @@ function ContactForm () {
 
     return (
         <div>
-         <form action="AirShareGenerational@gmail.com" method="get" enctype="text/plain">
+         <form action="AirShareGenerational@gmail.com" method="get" enctype="text/plain" style={{marginLeft: "20px", marginRight: "20px"}}>
             <div className="form-group">
                 <label for="exampleFormControlInput1" style={{color: "white"}}>Email</label>
                 <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
