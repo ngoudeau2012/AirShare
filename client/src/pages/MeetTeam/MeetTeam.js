@@ -16,10 +16,16 @@ function MeetTeam() {
 
         <div
           style={{
-            backgroundColor: isBackgroundDark ? '#0f4c75' : 'light',
+            backgroundColor: isBackgroundDark ? '#3282b8' : 'light',
           }}
         >
         <Navbar/>
+
+        <div style={{color: "white"}}>
+          <br></br>
+          <h1>Meet our team...</h1>
+          <br></br>
+        </div>
  
         <Container>
         <Row>

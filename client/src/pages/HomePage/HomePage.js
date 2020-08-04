@@ -16,7 +16,7 @@ function HomePage() {
   return (
     <div
       style={{
-        backgroundColor: isBackgroundDark ? "#0f4c75" : "light",
+        backgroundColor: isBackgroundDark ? "#3282b8" : "light",
       }}
     >
       <HomeNav />

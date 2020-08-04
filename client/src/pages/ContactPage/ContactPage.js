@@ -12,10 +12,16 @@ function ContactPage() {
 
         <div
           style={{
-            backgroundColor: isBackgroundDark ? '#0f4c75' : 'light',
+            backgroundColor: isBackgroundDark ? '#3282b8' : 'light',
           }}
         >
+
         <Navbar/>
+        <div style={{color: "white"}}>
+          <br></br>
+          <h1>Let us know what's up.</h1>
+          <br></br>
+        </div>
         <ContactForm/>
         <Footer/>
 
