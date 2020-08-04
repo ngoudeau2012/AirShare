@@ -7,11 +7,11 @@ function ContactForm () {
         <div>
          <form>
             <div className="form-group">
-                <label for="exampleFormControlInput1">Email</label>
+                <label for="exampleFormControlInput1" style={{color: "white"}}>Email</label>
                 <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
             </div>
             <div className="form-group">
-                <label for="exampleFormControlSelect2">Question Subject</label>
+                <label for="exampleFormControlSelect2" style={{color: "white"}}>Question Subject</label>
                 <select multiple className="form-control" id="exampleFormControlSelect2">
                 <option>Signing Up</option>
                 <option>Logging In</option>
@@ -21,7 +21,7 @@ function ContactForm () {
                 </select>
             </div>
             <div className="form-group">
-                <label for="exampleFormControlTextarea1">Give us some details...</label>
+                <label for="exampleFormControlTextarea1" style={{color: "white"}}>Give us some details...</label>
                 <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 <input className="btn btn-primary" type="submit" value="Submit"></input>
             </div>

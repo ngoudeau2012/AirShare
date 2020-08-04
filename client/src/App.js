@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import HomePage from './pages/HomePage/HomePage'
+import ContactPage from './pages/ContactPage/ContactPage'
+import MeetTeam from './pages/MeetTeam/MeetTeam'
 
 function App() {
   return (

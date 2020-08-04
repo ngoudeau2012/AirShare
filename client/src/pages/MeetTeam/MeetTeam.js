@@ -3,6 +3,9 @@ import "./MeetTeam.css";
 import Navbar from "../../components/Navbar/Navbar"
 import AboutCard from "../../components/AboutCard/AboutCard"
 import meetteam from "./meetteam.json";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
 import Footer from "../../components/Footer/Footer";
 
 function MeetTeam() {
@@ -13,7 +16,7 @@ function MeetTeam() {
 
         <div
           style={{
-            backgroundColor: isBackgroundDark ? '#1b262c' : 'light',
+            backgroundColor: isBackgroundDark ? '#0f4c75' : 'light',
           }}
         >
         <Navbar/>

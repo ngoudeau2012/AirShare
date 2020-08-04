@@ -9,7 +9,7 @@ function AboutCard (props) {
         <div className="card-body">
         <h5 className="card-title">{props.aboutcardtitle}</h5>
         <p className="card-text">{props.aboutcarddescription}</p>
-        <a href={props.aboutlink} className="btn btn-primary">{props.aboutlinkname}</a>
+        <a href={props.aboutlink} target="_blank" className="btn btn-primary">{props.aboutlinkname}</a>
         </div>
     </div>
     </div>
