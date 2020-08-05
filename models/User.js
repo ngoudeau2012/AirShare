@@ -38,11 +38,6 @@ const UserSchema = mongoose.Schema({
   },
 });
 
-UserSchema.methods.addToContacts = function (data) {
-  this.contacts = this.contacts.push(data);
-  return this.contacts;
-};
-
 const User = mongoose.model("user", UserSchema);
 
 module.exports = User;
