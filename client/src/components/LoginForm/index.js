@@ -32,7 +32,7 @@ function LoginForm() {
           <label htmlFor="exampleInputPassword1">Password</label>
           <input
             type="password"
-            name="email"
+            name="password"
             className="form-control"
             onChange={e => setPasswordState(e.target.value)}
           />
