@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Footer from "../../components/Footer/Footer";
+import "../../App.css"
 
 function MeetTeam() {
     
@@ -15,6 +16,7 @@ function MeetTeam() {
     return (
 
         <div
+        className= "App"
           style={{
             backgroundColor: isBackgroundDark ? '#3282b8' : 'light',
           }}

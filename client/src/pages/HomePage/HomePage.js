@@ -9,12 +9,13 @@ import QuoteCard from "../../components/QuoteCard/QuoteCard";
 import Card from "../../components/Card/Card";
 import aboutus from "./aboutus.json";
 import Footer from "../../components/Footer/Footer";
+import "../../App.css"
 
 function HomePage() {
   const isBackgroundDark = true;
 
   return (
-    <div
+    <div className="App"
       style={{
         backgroundColor: isBackgroundDark ? "#3282b8" : "light",
       }}
