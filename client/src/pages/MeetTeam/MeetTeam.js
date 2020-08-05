@@ -2,6 +2,7 @@ import React from "react";
 import "./MeetTeam.css";
 import Navbar from "../../components/Navbar/Navbar"
 import Footer from "../../components/Footer/Footer";
+import "../../App.css"
 
 function MeetTeam() {
     
@@ -10,6 +11,7 @@ function MeetTeam() {
     return (
 
         <div
+        className= "App"
           style={{
             backgroundColor: isBackgroundDark ? '#1b262c' : 'light',
           }}
