@@ -5,7 +5,7 @@ const Cryptr = require("cryptr");
 require("dotenv").config();
 cryptr = new Cryptr(`${process.env.CRYPTRPASS}`);
 
-const { informationFilter } = require("../../utils/accounts/informationFilter");
+const { informationFilter } = require("../../utils/api/informationFilter");
 
 // Get All Information
 router.get("/:id/information", (req, res) => {

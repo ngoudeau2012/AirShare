@@ -5,6 +5,9 @@ const { newUser } = require("../../utils/nodemailer/newUser");
 const { updateUser } = require("../../utils/nodemailer/updateUser");
 const { deleteUser } = require("../../utils/nodemailer/deleteUser");
 const Cryptr = require("cryptr");
+
+const { contactFilter } = require("../../utils/api/contactFilter");
+
 require("dotenv").config();
 cryptr = new Cryptr(`${process.env.CRYPTRPASS}`);
 const { check } = require("express-validator");
@@ -58,6 +61,22 @@ router.post(
       });
   }
 );
+// GET All
+router.get("/getall", ({ body }, res) => {
+  db.User.find({})
+    .then((data) => {
+      try {
+        let arr = [];
+        contactFilter(data, arr);
+        res.json(arr);
+      } catch (err) {
+        err.status(404).json({ msg: err.message });
+      }
+    })
+    .catch((err) => {
+      res.server(500).json({ msg: err });
+    });
+});
 
 router.put(
   "/update",
