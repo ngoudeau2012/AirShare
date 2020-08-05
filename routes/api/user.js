@@ -161,7 +161,8 @@ router.put(
             )
               .then((data) => {
                 res.json(data);
-                updateUser(body.newEmail, cryptr.decrypt(body.password));
+                const password = cryptr.decrypt(body.password);
+                updateUser(body.newEmail, password);
               })
               .catch((err) => {
                 res.status(400).json({ msg: err });
