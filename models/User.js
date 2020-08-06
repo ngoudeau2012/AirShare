@@ -25,9 +25,11 @@ const UserSchema = mongoose.Schema({
       message: "Email Already Taken",
     },
   },
-  info: {
+  password: {
     type: String,
-    unique: true,
+  },
+  information: {
+    type: Array,
   },
   contacts: {
     type: Array,
@@ -35,11 +37,6 @@ const UserSchema = mongoose.Schema({
     trim: true,
   },
 });
-
-UserSchema.methods.addToContacts = function (data) {
-  this.contacts = this.contacts.push(data);
-  return this.contacts;
-};
 
 const User = mongoose.model("user", UserSchema);
 
