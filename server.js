@@ -8,7 +8,7 @@ const expressSession = require("express-session");
 const db = require("./config/db");
 
 require("dotenv").config();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // MW
 const app = express();

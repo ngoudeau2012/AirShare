@@ -1,9 +1,33 @@
 import React from "react";
 import "./QuoteCard.css";
 
-function QuoteCard() {
+export default class FetchRandomUser extends React.Component {
+    state = {
+      loading: true,
+      quote: "",
+      thoughtAuthor: ""
+    };
+  
+    async componentDidMount() {
+      const url = "https://cors-anywhere.herokuapp.com/https://www.forbes.com/forbesapi/thought/uri.json?enrich=true&query=1&relatedlimit=1";
+      const response = await fetch(url);
+      const data = await response.json();
+      this.setState({ quote: data.thought.quote, thoughtAuthor: data.thought.thoughtAuthor.name, loading: false });
+    
+      console.log(this.state)
 
-    return (
+    }
+  
+    render() {
+      if (this.state.loading) {
+        return <div>loading...</div>;
+      }
+  
+      if (!this.state.quote) {
+        return <div>Can't find the inspiration today.</div>;
+      }
+
+      return (
         <div>
           <div></div>
           <div className="card" style={{marginBottom: "20px"}}>
@@ -12,13 +36,13 @@ function QuoteCard() {
         </div>
         <div className="card-body">
         <blockquote className="blockquote mb-0">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer className="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+            <p>{this.state.quote}</p>
+            <footer className="blockquote-footer">{this.state.thoughtAuthor}</footer>
         </blockquote>
 </div>
 </div>
 </div>
     );
-}
-
-export default QuoteCard;
+  
+    }
+  }
