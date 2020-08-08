@@ -1,0 +1,9 @@
+.profileImage{
+    object-fit: cover;
+  width:100%;
+  height: 425px;
+    
+}
+.container{
+    margin-top: 20px;
+}

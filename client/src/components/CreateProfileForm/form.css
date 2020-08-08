@@ -1,0 +1,9 @@
+.formLabel{
+    font-size: .75em;
+    margin-bottom: 4px;
+    margin-left: 5px;
+    font-weight: bolder;
+}
+.formRow{
+    margin-bottom: 16px;
+}
