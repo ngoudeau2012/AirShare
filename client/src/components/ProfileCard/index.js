@@ -20,14 +20,12 @@ function ProfileCard({profile}) {
         src={profile.photoUrl} 
       />
       <Card.Body>
-          <Row>
-          <Card.Title>{profile.firstName + " " + profile.middleInitial + " " + profile.lastName}</Card.Title>
-          <i class="fab fa-linkedin"></i>
-          </Row>
+          <Card.Title className="userName">{profile.firstName + " " + profile.middleInitial + " " + profile.lastName}</Card.Title>
           <p className="careerInfo">{profile.position +" at "+profile.company}</p>
         <Card.Text>
           {profile.bio}
         </Card.Text>
+        <Card.Link href={profile.linkedIn}>LinkedIn</Card.Link>
       </Card.Body>
     </Card>
   );
