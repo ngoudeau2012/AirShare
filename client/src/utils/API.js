@@ -4,7 +4,7 @@ export default {
     return axios.post("/api/user/create", data);
   },
   loginUser: (data) => {
-    return axios.post("/api/user/create", data);
+    return axios.post("/api/user/login", data);
   },
   deleteUser: (data) => {
     return axios.delete("/api/user/delete", data);

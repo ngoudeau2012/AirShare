@@ -1,12 +1,16 @@
-import React from "react";
+import React,{useState} from "react";
 import Container from "../../components/Container"
 import LoginForm from "../../components/LoginForm"
+import { PromiseProvider } from "mongoose";
 
-function Login(){
+
+function Login(props){
     return (
         <div className="App">
           <Container>
-            <LoginForm />
+            <LoginForm 
+            login={props.login}
+            />
           </Container>
         </div>
       );

@@ -1,14 +1,33 @@
 import React, {useState} from "react";
+import API from "../../utils/API"
 
 function LoginForm() {
 
-    const [emailState, setEmailState] = useState("") 
-    const [passwordState, setPasswordState] = useState("") 
+    const [loginState, setLoginState] = useState({
+      email:"",
+      password:""
+    })  
 
+    const handleOnChange = e =>{
+      setLoginState({...loginState, [e.target.name]: e.target.value})
+  }
     const handleSubmit = e => {
         e.preventDefault();
-        console.log("Email is " + emailState);
-        console.log("Password is " + passwordState);
+        switch(e.target.name){
+          case "login":
+            console.log(loginState)
+            API.loginUser({ email : loginState.email , password: loginState.password }).then(res =>{
+              console.log(res);
+              sessionStorage.setItem("id",res._id)
+            }).catch(err => {
+              console.log("Login Error", err)
+            })
+            return
+          // case "sign-up":
+          //   API.newUser(loginState).then(res => {
+          //     ngoudeau2012
+          //   })
+        }
       };
 
   return (
@@ -22,7 +41,7 @@ function LoginForm() {
             name="email"
             placeholder="jane.joe@example.com"
             aria-describedby="emailHelp"
-            onChange={e => setEmailState(e.target.value)}
+            onChange={handleOnChange}
           />
           <small id="emailHelp" className="form-text text-muted">
             We'll never share your email with anyone else.
@@ -34,14 +53,14 @@ function LoginForm() {
             type="password"
             name="password"
             className="form-control"
-            onChange={e => setPasswordState(e.target.value)}
+            onChange={handleOnChange}
           />
         </div>
         <div className="row">
-        <button type="submit" className="btn btn-primary col-3 mx-2">
+        <button type="submit" name="login" className="btn btn-primary col-3 mx-2" onClick={handleSubmit}>
           Login
         </button>
-        <button type="submit" className="btn btn-primary col-3 mx-2">
+        <button type="submit" name= "signUp" className="btn btn-primary col-3 mx-2">
           Sign Up
         </button>
         </div>

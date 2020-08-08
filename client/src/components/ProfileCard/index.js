@@ -13,6 +13,9 @@ import {
 import "./ProfileCard.css"
 
 function ProfileCard({profile}) {
+
+    
+
   return (
     <Card>
       <Image

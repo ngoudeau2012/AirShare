@@ -2,9 +2,10 @@
   "name": "mern",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3000/",
+  "proxy": "http://localhost:5000/",
   "dependencies": {
     "aos": "^2.3.4",
+    "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
     "qrcode.react": "^1.0.0",
     "react": "^16.6.3",

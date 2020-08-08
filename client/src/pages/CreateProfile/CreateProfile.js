@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import CreateProfileForm from "../../components/CreateProfileForm";
 import ProfileCard from "../../components/ProfileCard";
 import Navbar from "../../components/Navbar/Navbar"
@@ -7,6 +7,7 @@ import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/Col"
 import { set } from "mongoose";
 import './createProfile.css'
+import API from "../../utils/API"
 
 function CreateProfile(){
 
@@ -23,7 +24,7 @@ function CreateProfile(){
     })
 
     useEffect(()=>{
-        
+        API.getAllUserInfo()
     })
 
     const handleOnChange = e =>{
