@@ -38,7 +38,8 @@
     "if-env": "^1.0.4",
     "mongoose": "^5.9.26",
     "morgan": "^1.10.0",
-    "nodemailer": "^6.4.11"
+    "nodemailer": "^6.4.11",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "concurrently": "^4.1.2",
