@@ -21,7 +21,11 @@ function CreateProfile(){
         position:"",
         bio: ""
     })
- 
+
+    useEffect(()=>{
+        
+    })
+
     const handleOnChange = e =>{
         setFormState({...formState, [e.target.name]: e.target.value})
      
@@ -42,7 +46,10 @@ function CreateProfile(){
             <Row className="justify-content-md-center">
                 <Col lg={7}>
                 <CreateProfileForm 
-                onChange= {handleOnChange}/>
+                onChange= {handleOnChange}
+                submitProfile ={handleSubmit}
+                />
+                
                 </Col>
                 <Col lg={5}>
                     <ProfileCard 

@@ -25,7 +25,7 @@ function ProfileCard({profile}) {
         <Card.Text>
           {profile.bio}
         </Card.Text>
-        <Card.Link href={profile.linkedIn}>LinkedIn</Card.Link>
+        <Card.Link href={profile.linkedIn}><i class="fab fa-linkedin"></i> LinkedIn</Card.Link>
       </Card.Body>
     </Card>
   );
