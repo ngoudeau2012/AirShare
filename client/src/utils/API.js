@@ -24,7 +24,7 @@ export default {
   getAllUserContacts: (params) => {
     return axios.get("/api/accounts/" + params + "/contacts");
   },
-  getAll: (params) => {
+  getAllAccounts: (params) => {
     return axios.get("/api/accounts/" + params);
   },
   addContact: (params, data) => {
