@@ -18,15 +18,19 @@ function LoginForm() {
             console.log(loginState)
             API.loginUser({ email : loginState.email , password: loginState.password }).then(res =>{
               console.log(res);
-              sessionStorage.setItem("id",res._id)
+              sessionStorage.setItem("id",res.data._id)
             }).catch(err => {
               console.log("Login Error", err)
             })
             return
-          // case "sign-up":
-          //   API.newUser(loginState).then(res => {
-          //     ngoudeau2012
-          //   })
+          case "signUp":
+            console.log("Sign Up Clicked :)")
+            API.newUser({ email : loginState.email , password: loginState.password }).then(res => {
+              console.log(res)
+              sessionStorage.setItem("id",res.data._id)
+            }).catch(err => {
+              console.log("Sign-up Error", err)
+            })
         }
       };
 
@@ -60,7 +64,7 @@ function LoginForm() {
         <button type="submit" name="login" className="btn btn-primary col-3 mx-2" onClick={handleSubmit}>
           Login
         </button>
-        <button type="submit" name= "signUp" className="btn btn-primary col-3 mx-2">
+        <button type="submit" name= "signUp" className="btn btn-primary col-3 mx-2" onClick={handleSubmit}>
           Sign Up
         </button>
         </div>
