@@ -15,7 +15,6 @@ function Navbar() {
     <div className="navbar-nav">
       <a className="nav-item nav-link" href="#">Connections</a>
       <a className="nav-item nav-link" href="#">Profile</a>
-      <a className="nav-item nav-link" Link to="/contact">Contact</a>
       <a className="nav-item nav-link" Link to="/meetteam">Meet the Team</a>
     </div>
   </div>
