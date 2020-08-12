@@ -1,30 +1,23 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/github_username/repo">
+  <a href="https://github.com/ngoudeau2012/AirShare">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">YOUR_TITLE</h3>
+  <h3 align="center">AirShare</h3>
 
   <p align="center">
-    YOUR_SHORT_DESCRIPTION
+    Electronic business card powered on QR Code generator and blockchain components.
     <br />
-    <a href="https://github.com/github_username/repo"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/ngoudeau2012/AirShare"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo">View Demo</a>
+    <a href="https://github.com/ngoudeau2012/AirShare">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo/issues">Report Bug</a>
+    <a href="https://github.com/ngoudeau2012/AirShare/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo/issues">Request Feature</a>
+    <a href="https://github.com/ngoudeau2012/AirShare/issues">Request Feature</a>
   </p>
 </p>
 
@@ -129,31 +122,40 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact The Group
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+[]
 
-Project Link: [https://github.com/github_username/repo](https://github.com/github_username/repo)
+Project Link: [https://github.com/ngoudeau2012/AirShar](https://github.com/ngoudeau2012/AirShar)
 
 <!-- ACKNOWLEDGEMENTS -->
 
-## Acknowledgements
+## Contribution
 
-- []()
-- []()
-- []()
+<p float="left">
+<img src="./assets/images/image1.JPG" alt="Dashboard Image" height="145px" style="margin: 10px;"/>
+<img src="./assets/images/image2.JPG" alt="Homepage Image" height="145px" style="margin: 10px;"/>
+<img src="./assets/images/image3.JPG" alt="Login Page Image" height="145px" style="margin: 10px;"/>
+<img src="./assets/images/image4.JPG" alt="Login Page Image" height="145px" style="margin: 10px;"/>
+</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+![GitHub last commit](https://img.shields.io/github/last-commit/ngoudeau2012/AirShare)
+![contributors-shield](https://img.shields.io/github/contributors/ngoudeau2012/AirShare)
+![forks-shield](https://img.shields.io/github/forks/ngoudeau2012/AirShare)
+![forks-url](https://github.com/ngoudeau2012/AirShare/network/members)
+![stars-shield](https://img.shields.io/github/stars/ngoudeau2012/AirShare)
+![stars-url](https://github.com/ngoudeau2012/AirShare/stargazers)
+![issues-shield](https://img.shields.io/github/issues/ngoudeau2012/AirShare.svg?style=flat-square)
+![issues-url](https://github.com/ngoudeau2012/AirShare/issues)
+![license-shield](https://img.shields.io/github/license/ngoudeau2012/AirShare.svg?style=flat-square)
+![coverage](https://img.shields.io/badge/coverage-80%25-yellowgreen)
+![version](https://img.shields.io/badge/version-1.1.3-blue)
+![gem](https://img.shields.io/badge/gem-2.2.0-blue)
+![dependencies](https://img.shields.io/badge/dependencies-up%20to%20date)
+![codacy](https://img.shields.io/badge/codacy-A-blue)
+![semver](https://img.shields.io/badge/semver-2.0.0-blue)
+![receives](https://img.shields.io/badge/receives-1.00%20USD%2Fyear-yellow)
+![downloads](https://img.shields.io/badge/downloads-2k%2Fyear-yellow)
+![rating](https://img.shields.io/badge/rating-★★★★★-brightgreen)
+![uptime](https://img.shields.io/badge/uptime-100%25-brightgreen)
