@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 function Footer () {
 
@@ -10,7 +11,9 @@ function Footer () {
             <div className="card-body">
             <h5 className="card-title">Thanks for visiting AirShare.</h5>
             <p className="card-text">Still have questions? Contact us below.</p>
-            <a href="#" className="btn btn-primary">Contact Us</a>
+            <Link to="/contact-page" className="btn btn-primary">
+         Contact Us
+            </Link>
         </div>
     </div>
 </div>
