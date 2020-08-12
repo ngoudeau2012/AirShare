@@ -1,7 +1,6 @@
 import React from "react";
 import "./ContactList.css";
 import Navbar from "../../components/Navbar/Navbar"
-import AboutCard from "../../components/AboutCard/AboutCard"
 import ECard from "../../components/ECard/ECard";
 import ContactList from "./ContactList.json";
 import Col from "react-bootstrap/Col";
