@@ -7,9 +7,9 @@ function HomeNav() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" Link to="/home">
-          AirShare
-        </a>
+        <Link to="/" className="navbar-brand">
+         AirShare
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -23,12 +23,12 @@ function HomeNav() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <a className="nav-item nav-link" href="#">
-              Log In
-            </a>
-            <a className="nav-item nav-link" Link to="/meetteam">
-              Meet the Team
-            </a>
+          <Link to="/login" className="nav-item nav-link">
+         Log In
+          </Link>
+          <Link to="/meet-team" className="nav-item nav-link">
+         Meet the Team
+        </Link>
           </div>
         </div>
       </nav>

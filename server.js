@@ -31,7 +31,7 @@ app.use(
 db();
 // DB => API
 
-const publicPath = path.join(__dirname, './client/public');
+const publicPath = path.join(__dirname, './client/build');
 app.use(express.static(publicPath));
 app.use("/api/user", require("./routes/api/user"));
 app.use("/api/accounts", require("./routes/api/accounts"));
