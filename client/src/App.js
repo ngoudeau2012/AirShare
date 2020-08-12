@@ -29,6 +29,7 @@ function App() {
       <Route exact path = "/" component={HomePage} />
       <Route exact path = "/meet-team" component={MeetTeam} />
       <Route exact path = "/contact-page" component={ContactPage} />
+      <Route exact path = "/Profile" component={Profile} />
       <Route exact path = "/sign-up" component={CreateProfile} />
       <Route exact path = "/login" render={props => <Login login={login}/>}/>
       <Route exact path = "/network" component={ContactList} />
