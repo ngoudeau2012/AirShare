@@ -32,10 +32,10 @@ function App() {
       <Route exact path = "/Profile" component={Profile} />
       <Route exact path = "/sign-up" component={CreateProfile} />
       <Route exact path = "/login" render={props => <Login login={login}/>}/>
-      <Route exact path = "/Network" component={ContactList} />
+      <Route exact path = "/network" component={ContactList} />
+      <Route exact path = "/user/profile" component = {Profile} />
 
       {/* <Route path="/life" render={props => <Life sayHello = {this.sayHello} />} /> */}
-      {/* <Route exact path = "/user/profile/:id" component = {Profile} /> */}
     </Router>
     </UserIDContext.Provider>
   );

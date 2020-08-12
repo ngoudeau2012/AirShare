@@ -13,6 +13,12 @@ function Contacts() {
     
     const isBackgroundDark = true;
     
+    // contact list state to pull down all users
+
+    const [userListState, setUserListState] = useState([])
+
+
+
     return (
 
         <div

@@ -27,6 +27,13 @@ function CreateProfile(){
         API.getAllUserInfo()
     })
 
+    const saveUserProfile = (e, userData) => {
+        e.preventDefault();
+        let _id = sessionStorage.getItem("id")
+        API.updateCard(_id,userData).then((res)=> {
+            console.log(res)
+        }).catch((err) => console.log(err));
+    }
     const handleOnChange = e =>{
         setFormState({...formState, [e.target.name]: e.target.value})
      
@@ -48,7 +55,7 @@ function CreateProfile(){
                 <Col lg={7}>
                 <CreateProfileForm 
                 onChange= {handleOnChange}
-                submitProfile ={handleSubmit}
+                submitProfile ={saveUserProfile}
                 />
                 
                 </Col>
