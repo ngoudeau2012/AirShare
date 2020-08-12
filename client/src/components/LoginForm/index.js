@@ -31,7 +31,9 @@ function LoginForm() {
       };
 
   return (
-    <div className="row justify-content-md-center">
+
+    <div className="animate__animated animate__fadeInUp">
+    <div className="row justify-content-md-center" style={{color: "white"}}>
       <form className="col-lg-6" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Email address</label>
@@ -43,7 +45,7 @@ function LoginForm() {
             aria-describedby="emailHelp"
             onChange={handleOnChange}
           />
-          <small id="emailHelp" className="form-text text-muted">
+          <small id="emailHelp" className="form-text">
             We'll never share your email with anyone else.
           </small>
         </div>
@@ -64,8 +66,9 @@ function LoginForm() {
           Sign Up
         </button>
         </div>
-        
+        <br></br>
       </form>
+    </div>
     </div>
   );
 }
