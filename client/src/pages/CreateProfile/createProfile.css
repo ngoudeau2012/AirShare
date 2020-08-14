@@ -1,3 +1,7 @@
+.background-dark {
+    background-color: #3282b8;
+}
+
 .createProfileTitle{
     font-size: 40px;
     margin-bottom: 0;
@@ -8,3 +12,4 @@ hr{
 div{
     font-family: 'Montserrat', sans-serif;
 }
+

@@ -5,11 +5,13 @@ import Navbar from "../../components/Navbar/Navbar"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/Col"
+import Footer from "../../components/Footer/Footer";
 import { set } from "mongoose";
 import './createProfile.css'
 import API from "../../utils/API"
 
 function CreateProfile(){
+    const isBackgroundDark = true;
 
     const [formState, setFormState] = useState({
         name: "",
@@ -50,11 +52,15 @@ function CreateProfile(){
     }
 
     return(
-        <div>
+
+        <div className= "App"
+        style={{
+          backgroundColor: isBackgroundDark ? '#3282b8' : 'light',
+        }}>
+
         <Navbar />
-        <Container className="container">
-           
-            <p className="createProfileTitle">Creat Your User Profile</p>
+        <Container>
+        <h1 style={{border: "10px", borderStyle: "groove", borderColor: "white", color: "white"}}>Create Your User Profile</h1>
             <hr />
             <Row className="justify-content-md-center">
                 <Col lg={7}>
@@ -72,6 +78,8 @@ function CreateProfile(){
                 </Col>
             </Row>
         </Container>
+        <br></br>
+        <Footer />
         </div>
     )
 }
