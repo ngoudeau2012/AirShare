@@ -2,14 +2,13 @@ import React, {useState, useEffect} from "react";
 import "./Profile.css";
 import Navbar from "../../components/Navbar/Navbar"
 import ECard from "../../components/ECard/ECard";
-import ProfileCard from "../../components/ProfileCard/index"
+import ProfileCard from "../../components/ProfileCard"
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Footer from "../../components/Footer/Footer";
 import "../../App.css";
 import API from "../../utils/API";
-import ProfileCard from "../../components/ProfileCard"
 
 function UserProfile() {
     
