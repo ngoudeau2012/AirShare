@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./ContactList.css";
 import Navbar from "../../components/Navbar/Navbar"
 import ECard from "../../components/ECard/ECard";
@@ -8,6 +8,7 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Footer from "../../components/Footer/Footer";
 import "../../App.css"
+import API from "../../utils/API";
 
 function Contacts() {
     
@@ -16,8 +17,17 @@ function Contacts() {
     // contact list state to pull down all users
 
     const [userListState, setUserListState] = useState([])
+    useEffect (() => {
+      let userID = sessionStorage.getItem("id")
+      API.getAllUsers().then(res => {
+        console.log(res)
+        setUserListState(res.data)
+      }).catch(err => {
+        console.log("Get users error:", err)
+      })
+    },[])
 
-
+    
 
     return (
 
@@ -37,50 +47,11 @@ function Contacts() {
  
         <Container>
         <Row>
-          <Col>
+          <Col xs={12} lg={3}>
             <ECard
-              ecardimage={ContactList[0].ecardimage}
-              ecardimagedescription={ContactList[0].ecardimagedescription}
-              ecardtitle={ContactList[0].ecardtitle}
-              ecarddescription={ContactList[0].ecarddescription}
-              ecardlink={ContactList[0].ecardlink}
-              ecardlinkname={ContactList[0].ecardlinkname}
-            />
-          </Col>
-          <Col>
-            <ECard 
-              ecardimage={ContactList[1].ecardimage}
-              ecardimagedescription={ContactList[1].ecardimagedescription}
-              ecardtitle={ContactList[1].ecardtitle}
-              ecarddescription={ContactList[1].ecarddescription}
-              ecardlink={ContactList[1].ecardlink}
-              ecardlinkname={ContactList[1].ecardlinkname}
             />
           </Col>
           </Row>
-          <Row>
-          <Col>
-            <ECard 
-              ecardimage={ContactList[2].ecardimage}
-              ecardimagedescription={ContactList[2].ecardimagedescription}
-              ecardtitle={ContactList[2].ecardtitle}
-              ecarddescription={ContactList[2].ecarddescription}
-              ecardlink={ContactList[2].ecardlink}
-              ecardlinkname={ContactList[2].ecardlinkname}
-            />
-          </Col>
-          <Col>
-            <ECard 
-              ecardimage={ContactList[3].ecardimage}
-              ecardimagedescription={ContactList[3].ecardimagedescription}
-              ecardtitle={ContactList[3].ecardtitle}
-              ecarddescription={ContactList[3].ecarddescription}
-              ecardlink={ContactList[3].ecardlink}
-              ecardlinkname={ContactList[3].ecardlinkname}
-            />
-          </Col>
-        </Row>
-
       </Container>
       
         <Footer/>

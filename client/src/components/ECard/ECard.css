@@ -1,0 +1,27 @@
+.profileImage{
+    object-fit: cover;
+  width:100%;
+  height: 100px;
+    
+}
+.container{
+    margin-top: 20px;
+}
+.socialIcon{
+    margin: 10px;
+    
+}
+.button{
+    background-color: ivory;
+    vertical-align: middle;
+
+}
+.careerInfo{
+    font-size: .9em;
+    font-weight: bold;
+    color: lightslategray;
+    margin-bottom: .5em;
+}
+.userName{
+    margin-bottom: .25em;
+}
