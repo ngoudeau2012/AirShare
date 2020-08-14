@@ -12,25 +12,34 @@ import API from "../../utils/API"
 function CreateProfile(){
 
     const [formState, setFormState] = useState({
-        firstName: "",
-        middleInitial: "",
-        lastName: "",
+        name: "",
         linkedIn: "",
-        photoUrl:"",
-        pNumber: "",
+        photoURL:"",
+        phoneNumber: "",
         company: "",
         position:"",
         bio: ""
     })
 
     useEffect(()=>{
-        API.getAllUserInfo()
-    })
+        let _id = sessionStorage.getItem("id")
+        API.getAllUserInfo(_id).then(res => {
+            console.log(res)
+            res.data.information.map(info => {
+                for(let [key, value] of Object.entries(info)){
+                    console.log(key)
+                    console.log(value)
+                    setFormState({...formState, key : value})
+                    
+                }
+            })
+        }).then(console.log(formState))
+    },[])
 
-    const saveUserProfile = (e, userData) => {
+    const saveUserProfile = (e) => {
         e.preventDefault();
         let _id = sessionStorage.getItem("id")
-        API.updateCard(_id,userData).then((res)=> {
+        API.updateCard(_id,formState).then((res)=> {
             console.log(res)
         }).catch((err) => console.log(err));
     }

@@ -24,7 +24,7 @@ function UserProfile() {
       }).catch(err => {
         console.log("Get users error:", err)
       })
-    })
+    },[])
 
     const [userState, setUserState] = useState({})
     useEffect (() => {
@@ -35,7 +35,7 @@ function UserProfile() {
       }).catch(err => {
         console.log("Get users error:", err)
       })
-    })
+    },[])
     
     return (
 
@@ -55,12 +55,16 @@ function UserProfile() {
  
         <Container>
         <Row>
-          <ProfileCard />
+          <Col lg={5}>
+          {/* <ProfileCard /> */}
+          </Col>
+          <Col lg={7}>
           <Row>
-            <ECard 
+            {/* <ECard 
             profile = {connectionsListState}
-            />
+            /> */}
           </Row>
+          </Col>
         </Row>
         </Container>
       

@@ -22,18 +22,8 @@ function CreateProfileForm(props) {
           </Row>
         <Row className="formRow">
           <Col>
-            <p className="formLabel">First Name</p>
-            <Form.Control placeholder="Michael" name="firstName" onChange={props.onChange}/>
-          </Col>
-          <Col lg={4}>
-            <p className="formLabel">Middle Initial</p>
-            <Form.Control placeholder="G" name="middleInitial" onChange={props.onChange}/>
-          </Col>
-        </Row>
-        <Row className="formRow">  
-          <Col>
-          <p className="formLabel">Last Name</p>
-            <Form.Control placeholder="Scott" name="lastName" onChange={props.onChange}/>
+            <p className="formLabel">Full Name</p>
+            <Form.Control placeholder="Michael" name="name" onChange={props.onChange}/>
           </Col>
         </Row>
         <Row className="formRow">
