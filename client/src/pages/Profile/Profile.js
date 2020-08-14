@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./Profile.css";
 import Navbar from "../../components/Navbar/Navbar"
 import ECard from "../../components/ECard/ECard";
@@ -6,11 +6,36 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Footer from "../../components/Footer/Footer";
-import "../../App.css"
+import "../../App.css";
+import API from "../../utils/API";
+import ProfileCard from "../../components/ProfileCard"
 
 function UserProfile() {
     
     const isBackgroundDark = true;
+
+    const [connectionsListState, setConnectionsListState] = useState([])
+
+    useEffect (() => {
+      let userID = sessionStorage.getItem("id")
+      API.getAllUserContacts(userID).then(res => {
+        console.log(res)
+        setConnectionsListState(res.data)
+      }).catch(err => {
+        console.log("Get users error:", err)
+      })
+    })
+
+    const [userState, setUserState] = useState({})
+    useEffect (() => {
+      let userID = sessionStorage.getItem("id")
+      API.getAllUserInfo(userID).then(res => {
+        console.log(res)
+        setUserState(res.data)
+      }).catch(err => {
+        console.log("Get users error:", err)
+      })
+    })
     
     return (
 
@@ -29,7 +54,14 @@ function UserProfile() {
         </div>
  
         <Container>
-        
+        <Row>
+          <ProfileCard />
+          <Row>
+            <ECard 
+            profile = {connectionsListState}
+            />
+          </Row>
+        </Row>
         </Container>
       
         <Footer/>

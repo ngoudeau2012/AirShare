@@ -7,7 +7,7 @@ import Footer from "../../components/Footer/Footer";
 import { PromiseProvider } from "mongoose";
 
 
-function Login(props){
+function Login(){
 
   const isBackgroundDark = true;
 
@@ -27,7 +27,6 @@ function Login(props){
 
           <Container>
             <LoginForm 
-            login={props.login}
             />
           </Container>
 
