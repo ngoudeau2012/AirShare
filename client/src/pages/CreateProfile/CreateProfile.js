@@ -25,15 +25,16 @@ function CreateProfile(){
         let _id = sessionStorage.getItem("id")
         API.getAllUserInfo(_id).then(res => {
             console.log(res)
+            const userInfo = {}
             res.data.information.map(info => {
                 for(let [key, value] of Object.entries(info)){
                     console.log(key)
                     console.log(value)
-                    setFormState({...formState, key : value})
-                    
+                    userInfo[key] = value 
                 }
             })
-        }).then(console.log(formState))
+            setFormState(userInfo)
+        })
     },[])
 
     const saveUserProfile = (e) => {
@@ -65,6 +66,7 @@ function CreateProfile(){
                 <CreateProfileForm 
                 onChange= {handleOnChange}
                 submitProfile ={saveUserProfile}
+                profile={formState}
                 />
                 
                 </Col>
