@@ -49,11 +49,6 @@ function CreateProfile(){
      
     }
 
-    const handleSubmit = e => {
-        e.preventDefault();
-        
-      };
-
     return(
         <div>
         <Navbar />

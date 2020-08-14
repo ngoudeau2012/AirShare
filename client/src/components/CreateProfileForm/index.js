@@ -3,15 +3,15 @@ import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import FormGroup from "react-bootstrap/esm/FormGroup";
-import { FormLabel , Button} from "react-bootstrap";
-import "./form.css"
+import { FormLabel, Button } from "react-bootstrap";
+import "./form.css";
 
 function CreateProfileForm({onChange, profile, submitProfile}) {
 
   return (
-    <Form>
+    <Form enctype="multipart/form-data">
       <Row className="formRow">
-          <Col>
+        <Col>
           <p className="formLabel">Profile Photo Url</p>
             <Form.Control placeholder="Profile Photo" name="photoUrl" onChange={onChange}/>
           </Col>
