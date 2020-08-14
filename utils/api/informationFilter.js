@@ -17,12 +17,9 @@ module.exports.informationFilter = function (item, arr) {
     arr.push({ photoURL: cryptr.decrypt(item.substring(2)) });
   } else if (item.substring(0, 2) == "bi") {
     arr.push({ bio: cryptr.decrypt(item.substring(2)) });
-<<<<<<< HEAD
-=======
   } else if (item.substring(0, 2) == "po") {
     arr.push({ position: cryptr.decrypt(item.substring(2)) });
   } else {
->>>>>>> 83302b7543a92cc5873ccf6eaef144b0fb504b1b
     return;
   }
 };

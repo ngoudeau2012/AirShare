@@ -2,10 +2,7 @@
   "name": "mern",
   "version": "0.1.0",
   "private": true,
-<<<<<<< HEAD
-=======
   "proxy": "http://localhost:5000/",
->>>>>>> 83302b7543a92cc5873ccf6eaef144b0fb504b1b
   "dependencies": {
     "aos": "^2.3.4",
     "axios": "^0.19.2",

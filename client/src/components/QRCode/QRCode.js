@@ -1,10 +1,10 @@
 import React from "react";
-import "./Navbar.css";
-var QRCode = require("qrcode.react");
+import "./QRCode.css";
+import QRCode from "qrcode.react";
 
-function _QRCode(props) {
-  let val = `http://localhost:5000/api/accounts/${props.userId}`;
+function QR(props) {
+  let val = `http://localhost:5000/api/accounts/${props.userID}`;
   return <QRCode value={val} />;
 }
 
-export default _QRCode;
+export default QR;
