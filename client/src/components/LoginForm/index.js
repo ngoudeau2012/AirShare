@@ -18,20 +18,26 @@ function LoginForm() {
             console.log(loginState)
             API.loginUser({ email : loginState.email , password: loginState.password }).then(res =>{
               console.log(res);
-              sessionStorage.setItem("id",res._id)
+              sessionStorage.setItem("id",res.data._id)
             }).catch(err => {
               console.log("Login Error", err)
             })
             return
-          // case "sign-up":
-          //   API.newUser(loginState).then(res => {
-          //     ngoudeau2012
-          //   })
+          case "signUp":
+            console.log("Sign Up Clicked :)")
+            API.newUser({ email : loginState.email , password: loginState.password }).then(res => {
+              console.log(res)
+              sessionStorage.setItem("id",res.data._id)
+            }).catch(err => {
+              console.log("Sign-up Error", err)
+            })
         }
       };
 
   return (
-    <div className="row justify-content-md-center">
+
+    <div className="animate__animated animate__fadeInUp">
+    <div className="row justify-content-md-center" style={{color: "white"}}>
       <form className="col-lg-6" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Email address</label>
@@ -43,7 +49,7 @@ function LoginForm() {
             aria-describedby="emailHelp"
             onChange={handleOnChange}
           />
-          <small id="emailHelp" className="form-text text-muted">
+          <small id="emailHelp" className="form-text">
             We'll never share your email with anyone else.
           </small>
         </div>
@@ -60,12 +66,13 @@ function LoginForm() {
         <button type="submit" name="login" className="btn btn-primary col-3 mx-2" onClick={handleSubmit}>
           Login
         </button>
-        <button type="submit" name= "signUp" className="btn btn-primary col-3 mx-2">
+        <button type="submit" name= "signUp" className="btn btn-primary col-3 mx-2" onClick={handleSubmit}>
           Sign Up
         </button>
         </div>
-        
+        <br></br>
       </form>
+    </div>
     </div>
   );
 }
