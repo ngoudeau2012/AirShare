@@ -22,7 +22,7 @@ export default {
   },
   // creating profile card page
   updateCard: (params, data) => {
-    return axios.post("/api/accounts/" + params + "/information", data);
+    return axios.put("/api/accounts/" + params + "/information", data);
   },
   // profile pages user card -
   getAllUserInfo: (params) => {

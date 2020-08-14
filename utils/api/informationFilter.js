@@ -15,6 +15,10 @@ module.exports.informationFilter = function (item, arr) {
     arr.push({ company: cryptr.decrypt(item.substring(2)) });
   } else if (item.substring(0, 2) == "ph") {
     arr.push({ photoURL: cryptr.decrypt(item.substring(2)) });
+  } else if (item.substring(0, 2) == "bi") {
+    arr.push({ bio: cryptr.decrypt(item.substring(2)) });
+  } else if (item.substring(0, 2) == "po") {
+    arr.push({ position: cryptr.decrypt(item.substring(2)) });
   } else {
     return;
   }
