@@ -27,6 +27,7 @@
   "homepage": "https://github.com/ngoudeau2012/AirShare#readme",
   "dependencies": {
     "config": "^3.3.1",
+    "connect-mongo": "^3.2.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "cryptr": "^6.0.2",
