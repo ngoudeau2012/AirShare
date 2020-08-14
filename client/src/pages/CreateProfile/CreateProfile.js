@@ -18,7 +18,8 @@ function CreateProfile(){
         phoneNumber: "",
         company: "",
         position:"",
-        bio: ""
+        bio: "",
+        uploadPhoto: ""
     })
 
     useEffect(()=>{
@@ -46,9 +47,16 @@ function CreateProfile(){
     }
     const handleOnChange = e =>{
         setFormState({...formState, [e.target.name]: e.target.value})
+        console.log(formState)
      
     }
-
+    const handleUpload = e => {
+        console.log(e.target.name)
+        console.log(e.target.files[0].name)
+        setFormState({...formState, [e.target.name]: URL.createObjectURL(e.target.files[0])})
+        
+    }
+    console.log(formState)
     return(
         <div>
         <Navbar />
@@ -61,6 +69,7 @@ function CreateProfile(){
                 <CreateProfileForm 
                 onChange= {handleOnChange}
                 submitProfile ={saveUserProfile}
+                handleUpload = {handleUpload}
                 profile={formState}
                 />
                 

@@ -19,7 +19,12 @@ module.exports.informationFilter = function (item, arr) {
     arr.push({ bio: cryptr.decrypt(item.substring(2)) });
   } else if (item.substring(0, 2) == "po") {
     arr.push({ position: cryptr.decrypt(item.substring(2)) });
-  } else {
+  } else if (item.substring(0, 2) == "up") {
+    arr.push({ uploadPhoto: cryptr.decrypt(item.substring(2)) });
+  }
+
+
+   else {
     return;
   }
 };
