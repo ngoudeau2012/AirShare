@@ -55,7 +55,6 @@ function Contacts() {
       <Container>
         <Row>
           <Col xs={12} lg={3}>
-            <QRCode userID={userListState.id} />
             {userListState.map((item) => (
               <ECard person={item} />
             ))}

@@ -8,7 +8,7 @@ import CreateProfile from "./pages/CreateProfile/CreateProfile";
 import NotFound from "./pages/NotFound/NotFound.js";
 import Profile from "./pages/Profile/Profile";
 import Login from "./pages/Login/Login";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import UserIDContext from "./utils/UserIDContext";
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
         />
         <Route exact path="/network" component={ContactList} />
         <Route exact path="/user/profile" component={Profile} />
-        {/* <Route path="*" exact={true} component={NotFound} /> */}
+        <Route path="*" component={NotFound} />
         {/* <Route path="/life" render={props => <Life sayHello = {this.sayHello} />} /> */}
       </Router>
     </UserIDContext.Provider>
