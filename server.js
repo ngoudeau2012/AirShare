@@ -38,16 +38,18 @@ db().then(connection => {
 });
 // DB => API
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 
-
-const publicPath = path.join(__dirname, './client/public');
-app.use(express.static(publicPath));
+// app.use(express.static(publicPath));
 app.use("/api/user", require("./routes/api/user"));
 app.use("/api/accounts", require("./routes/api/accounts"));
 
+// const publicPath = path.join(__dirname, './client/public');
 app.get('*', (req, res) => {
-  res.sendFile(path.join(publicPath, 'index.html'));
+  res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
 
 app.listen(PORT, () => {
