@@ -6,18 +6,22 @@ import FormGroup from "react-bootstrap/esm/FormGroup";
 import { FormLabel, Button } from "react-bootstrap";
 import "./form.css";
 
-function CreateProfileForm({onChange, profile, submitProfile}) {
+function CreateProfileForm({onChange, profile, submitProfile,handleUpload}) {
 
   return (
+<<<<<<< HEAD
     <Form enctype="multipart/form-data" className="animate__animated animate__fadeInUp" style={{color: "white", border: "10px solid #1b262c", padding: "10px"}}>
+=======
+    <Form>
+>>>>>>> front_end_routes
       <Row className="formRow">
         <Col>
           <p className="formLabel">Profile Photo Url</p>
-            <Form.Control placeholder="Profile Photo" name="photoUrl" onChange={onChange}/>
+            <Form.Control placeholder="Profile Photo" name="photoURL" onChange={onChange} value={profile.photoURL}/>
           </Col>
           <Col>
-          <p className="formLabel" name="photoUpload">Upload photo</p>
-          <Form.File />
+          <p className="formLabel">Upload photo </p>
+          <Form.File  name="uploadPhoto" onChange={handleUpload} />
           </Col>
           </Row>
         <Row className="formRow">

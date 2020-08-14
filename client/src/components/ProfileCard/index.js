@@ -20,7 +20,7 @@ function ProfileCard({profile}) {
     <Card>
       <Image
         className="profileImage"
-        src={profile.photoURL} 
+        src={profile.uploadPhoto} 
       />
       <Card.Body>
           <Card.Title className="userName">{profile.name}</Card.Title>

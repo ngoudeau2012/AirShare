@@ -48,52 +48,6 @@ router.get("/:id/information", (req, res) => {
 
 // Add/Update/Delete Information
 router.put("/:id/information", (req, res) => {
-  upload(res, res, (err) => {
-    if (err) {
-      console.log("err: " + err);
-    } else {
-      console.log("req.file=    " + req);
-      console.log(file);
-    }
-  });
-
-  if (req.file) {
-    saveImage.upload(req, res, (err) => {
-      if (err) {
-        res.json(err);
-      } else {
-        const id = req.params.id;
-        let arr = [];
-        console.log("filename");
-        console.log(req.file.filename);
-        for (let [key, value] of Object.entries(req.body)) {
-          console.log(`${key}: ${value}`);
-          arr.push(`${key.substring(0, 2)}${cryptr.encrypt(value)}`);
-          arr.push(`ph${req.file.filename}`);
-        }
-        db.User.findOneAndUpdate(
-          {
-            _id: id,
-          },
-          {
-            $set: {
-              information: arr,
-            },
-          },
-          { runValidators: true, safe: true, upsert: false }
-        )
-          .then((data) => {
-            res.json(data);
-            console.log(data);
-          })
-          .catch((err) => {
-            res.status(400).json({ msg: err });
-          });
-      }
-    });
-  } else {
-    console.log("yes");
-    console.log(req.body);
     const id = req.params.id;
     let arr = [];
     for (let [key, value] of Object.entries(req.body)) {
@@ -119,7 +73,7 @@ router.put("/:id/information", (req, res) => {
         res.status(400).json({ msg: err });
       });
   }
-});
+);
 
 // GET Contacts
 router.get("/:id/contacts", (req, res) => {
