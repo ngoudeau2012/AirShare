@@ -42,7 +42,8 @@ router.put("/:id/information", (req, res) => {
       $set: {
         information: arr,
       },
-    }
+    },
+    { runValidators: true, safe: true, upsert: false }
   )
     .then((data) => {
       res.json(data);

@@ -23,7 +23,7 @@ function ProfileCard({profile}) {
         src={profile.photoUrl} 
       />
       <Card.Body>
-          <Card.Title className="userName">{profile.firstName + " " + profile.middleInitial + " " + profile.lastName}</Card.Title>
+          <Card.Title className="userName">{profile.name}</Card.Title>
           <p className="careerInfo">{profile.position +" at "+profile.company}</p>
         <Card.Text>
           {profile.bio}
