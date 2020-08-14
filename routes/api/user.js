@@ -64,11 +64,13 @@ router.post(
 // GET All
 router.get("/getall", ({ body }, res) => {
   db.User.find({})
-    .then((data) => {
+    .then(async (data) => {
       try {
         let arr = [];
         contactFilter(data, arr);
-        res.json(arr);
+        await res.json({ length: arr.length, arr });
+
+        // res.json({ length: data.length, data });
       } catch (err) {
         err.status(404).json({ msg: err.message });
       }
