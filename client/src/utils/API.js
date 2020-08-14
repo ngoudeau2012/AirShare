@@ -1,10 +1,10 @@
 import axios from "axios";
 export default {
-  // Needed sign-up
+  // Needed sign-up -
   newUser: (data) => {
     return axios.post("/api/user/create", data );
   },
-  // login page
+  // login page -
   loginUser: (data) => {
     return axios.post("/api/user/login", data);
   },
@@ -12,7 +12,7 @@ export default {
   deleteUser: (data) => {
     return axios.delete("/api/user/delete", data);
   },
-  //network page
+  //network page -
   getAllUsers: () => {
     return axios.get("/api/user/getall");
   },
@@ -24,11 +24,11 @@ export default {
   updateCard: (params, data) => {
     return axios.post("/api/accounts/" + params + "/information", data);
   },
-  // profile pages user card
+  // profile pages user card -
   getAllUserInfo: (params) => {
     return axios.get("/api/accounts/" + params + "/information");
   },
-  // profile page contact
+  // profile page contacts -
   getAllUserContacts: (params) => {
     return axios.get("/api/accounts/" + params + "/contacts");
   },

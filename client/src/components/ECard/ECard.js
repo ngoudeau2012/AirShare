@@ -12,18 +12,29 @@ import {
   } from "react-bootstrap";
 import "./ECard.css";
 
-function ECard (props) {
+function ECard ({profile}) {
   return (
-    <Card style={{ width: '100%', height: '80%'}}>
-    <Card.Img variant="top" src={props.ecardimage} />
-    <Card.Body>
-      <Card.Title>{props.ecardtitle}</Card.Title>
-      <Card.Text>
-      {props.ecarddescription}
-      </Card.Text>
-      <Button variant="primary">{props.ecardlinkname}</Button>
-    </Card.Body>
-  </Card>
+  //   <Card >
+  //   <Card.Img variant="top" src={props.ecardimage} />
+  //   <Card.Body>
+  //     <Card.Title>{props.ecardtitle}</Card.Title>
+  //     <Card.Text>
+  //     {props.ecarddescription}
+  //     </Card.Text>
+  //     <Button variant="primary">{props.ecardlinkname}</Button>
+  //   </Card.Body>
+  // </Card>
+  <Card>
+  <Image
+    className="profileImage"
+    
+  />
+  <Card.Body>
+      <Card.Title className="userName">Nicholas J Goudeau</Card.Title>
+      <p className="careerInfo">Facilities Guru at Amazon</p>
+    <Card.Link ><i class="fab fa-linkedin"></i> LinkedIn</Card.Link>
+  </Card.Body>
+</Card>
   );
 }
 
