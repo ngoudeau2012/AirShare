@@ -2,7 +2,7 @@ import axios from "axios";
 export default {
   // Needed sign-up -
   newUser: (data) => {
-    return axios.post("/api/user/create", data );
+    return axios.post("/api/user/create", data);
   },
   // login page -
   loginUser: (data) => {
@@ -40,7 +40,7 @@ export default {
   addContact: (params, data) => {
     return axios.put("/api/accounts/" + params + "/contacts/add", data);
   },
-  // someone unfollows someone 
+  // someone unfollows someone
   deleteContact: (params, data) => {
     return axios.put("/api/accounts/" + params + "/contacts/add", data);
   },

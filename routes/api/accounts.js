@@ -80,8 +80,7 @@ router.put("/:id/contacts/add", (req, res) => {
       $addToSet: {
         contacts: req.body.contacts,
       },
-    },
-    { safe: true, upsert: true }
+    }
   )
     .then((data) => {
       res.json(data);
