@@ -13,7 +13,7 @@ function CreateProfileForm({ onChange, profile, submitProfile, handleUpload }) {
           <p className="formLabel">Profile Photo Url</p>
           <Form.Control
             placeholder="Profile Photo"
-            name="photoURL"
+            name="uploadPhoto"
             onChange={onChange}
             value={profile.photoURL}
           />

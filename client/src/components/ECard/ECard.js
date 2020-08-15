@@ -22,7 +22,7 @@ function ECard({ person }) {
       obj[key] = value;
     }
   });
-
+  console.log(obj)
   // const [followClicked,setFollowClickedState]= useState ("animate__flip")
   const handleFollow = (e => {
     let userID = sessionStorage.getItem("id").trim()
@@ -52,7 +52,7 @@ function ECard({ person }) {
   return (
     <Col lg={4} sm={12}>
     <Card className="card animate__animated animate__fadeInDown eCard">
-      <Image className="eCardImage" src={obj.photoURL} />
+      <Image className="eCardImage" src={obj.uploadPhoto} />
       <Card.Body>
         <Card.Title className="userName">{obj.name}</Card.Title>
         <p className="careerInfo">
