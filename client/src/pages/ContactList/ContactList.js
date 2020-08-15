@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./ContactList.css";
 import Navbar from "../../components/Navbar/Navbar";
 import ECard from "../../components/ECard/ECard";
-import ContactList from "./ContactList.json";
 import QRCode from "../../components/QRCode/QRCode";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -54,11 +53,9 @@ function Contacts() {
 
       <Container>
         <Row>
-          <Col xs={12} lg={3}>
             {userListState.map((item) => (
               <ECard person={item} />
             ))}
-          </Col>
         </Row>
       </Container>
 

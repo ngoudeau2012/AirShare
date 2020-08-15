@@ -14,13 +14,13 @@ import "./ProfileCard.css"
 
 function ProfileCard({profile}) {
 
-    
+    console.log(profile)
 
   return (
     <Card>
       <Image
         className="profileImage"
-        src={profile.photoUrl} 
+        src={profile.uploadPhoto} 
       />
       <Card.Body>
           <Card.Title className="userName">{profile.name}</Card.Title>
@@ -28,7 +28,7 @@ function ProfileCard({profile}) {
         <Card.Text>
           {profile.bio}
         </Card.Text>
-        <Card.Link href={profile.linkedIn}><i class="fab fa-linkedin"></i> LinkedIn</Card.Link>
+        <Card.Link href={profile.linkedIn}><i className="fab fa-linkedin"></i> LinkedIn</Card.Link>
       </Card.Body>
     </Card>
   );

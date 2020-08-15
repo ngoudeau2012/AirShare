@@ -33,8 +33,6 @@ const UserSchema = mongoose.Schema({
   },
   contacts: {
     type: Array,
-    required: false,
-    trim: true,
   },
 });
 

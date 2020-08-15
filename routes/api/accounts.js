@@ -1,8 +1,9 @@
+require("dotenv").config();
 const express = require("express");
 const router = express.Router();
+const path = require("path");
 const db = require("../../models");
 const Cryptr = require("cryptr");
-require("dotenv").config();
 cryptr = new Cryptr(`${process.env.CRYPTRPASS}`);
 
 const { informationFilter } = require("../../utils/api/informationFilter");
@@ -27,12 +28,17 @@ router.get("/:id/information", (req, res) => {
 
 // Add/Update/Delete Information
 router.put("/:id/information", (req, res) => {
-  console.log(req.body);
   const id = req.params.id;
+  console.log(req.body);
   let arr = [];
   for (let [key, value] of Object.entries(req.body)) {
+    console.log("key, value");
     console.log(`${key}: ${value}`);
-    arr.push(`${key.substring(0, 2)}${cryptr.encrypt(value)}`);
+    if (key.substring(0, 2) !== "ph") {
+      arr.push(`${key.substring(0, 2)}${cryptr.encrypt(value)}`);
+    } else {
+      arr.push(`${key.substring(0, 2)}${value}`);
+    }
   }
   db.User.findOneAndUpdate(
     {
@@ -74,8 +80,7 @@ router.put("/:id/contacts/add", (req, res) => {
       $addToSet: {
         contacts: req.body.contacts,
       },
-    },
-    { safe: true, upsert: true }
+    }
   )
     .then((data) => {
       res.json(data);

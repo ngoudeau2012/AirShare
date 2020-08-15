@@ -27,11 +27,8 @@ function Navbar() {
             <Link to="/Network" className="nav-item nav-link">
               Connections
             </Link>
-            <Link to="/user/profile/:id" className="nav-item nav-link">
+            <Link to="/profile" className="nav-item nav-link">
               Profile
-            </Link>
-            <Link to="/meet-team" className="nav-item nav-link">
-              Meet the Team
             </Link>
           </div>
         </div>

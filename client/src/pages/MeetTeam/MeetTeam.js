@@ -1,6 +1,7 @@
 import React from "react";
 import "./MeetTeam.css";
 import Navbar from "../../components/Navbar/Navbar"
+import HomeNav from "../../components/HomeNav/HomeNav"
 import AboutCard from "../../components/AboutCard/AboutCard"
 import meetteam from "./meetteam.json";
 import Col from "react-bootstrap/Col";
@@ -21,7 +22,7 @@ function MeetTeam() {
             backgroundColor: isBackgroundDark ? '#3282b8' : 'light',
           }}
         >
-        <Navbar/>
+        <HomeNav/>
 
         <div style={{color: "white"}}>
           <br></br>

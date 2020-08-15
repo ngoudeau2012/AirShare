@@ -1,14 +1,15 @@
+require("dotenv").config();
 const express = require("express");
 const router = express.Router();
 const db = require("../../models");
 const { newUser } = require("../../utils/nodemailer/newUser");
 const { updateUser } = require("../../utils/nodemailer/updateUser");
 const { deleteUser } = require("../../utils/nodemailer/deleteUser");
+
 const Cryptr = require("cryptr");
 
 const { contactFilter } = require("../../utils/api/contactFilter");
 
-require("dotenv").config();
 cryptr = new Cryptr(`${process.env.CRYPTRPASS}`);
 const { check } = require("express-validator");
 
