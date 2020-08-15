@@ -30,9 +30,6 @@ function Navbar() {
             <Link to="/profile" className="nav-item nav-link">
               Profile
             </Link>
-            <Link to="/meet-team" className="nav-item nav-link">
-              Meet the Team
-            </Link>
           </div>
         </div>
       </nav>

@@ -80,13 +80,14 @@ function ECard({ person }) {
           </Modal.Header>
           <Modal.Body>
             <QR userID={QRState} />
+            <Row>
+            <a href={"tel:"+obj.pNumber} className="modalLink">Phone Number</a>
+            <a href={"mailto:"+obj.email} className="modalLink">Email</a>
+            </Row>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
             </Button>
           </Modal.Footer>
         </Modal>{" "}

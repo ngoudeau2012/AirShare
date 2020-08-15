@@ -29,3 +29,12 @@
     margin: 1em;
     min-height: 450px;
 }
+
+.modal .modal-body{
+    display: grid;
+    place-content: center;
+}
+
+.modalLink{
+    /* margin: 1em 1em */
+}

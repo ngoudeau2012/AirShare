@@ -19,7 +19,7 @@ function LoginForm() {
             API.loginUser({ email : loginState.email , password: loginState.password }).then(res =>{
               console.log(res);
               sessionStorage.setItem("id",res.data._id)
-              window.location.search = "/network"
+              window.location.href = "/network"
             }).catch(err => {
               console.log("Login Error", err)
             })
@@ -29,7 +29,7 @@ function LoginForm() {
             API.newUser({ email : loginState.email , password: loginState.password }).then(res => {
               console.log(res)
               sessionStorage.setItem("id",res.data._id)
-              window.location.search = "/sign-up"
+              window.location.href = "/sign-up"
             }).catch(err => {
               console.log("Sign-up Error", err)
             })
