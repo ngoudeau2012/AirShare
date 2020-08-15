@@ -25,8 +25,8 @@ function ECard({ person }) {
 
   // const [followClicked,setFollowClickedState]= useState ("animate__flip")
   const handleFollow = (e => {
-    let userID = sessionStorage.getItem("id")
-    let followID = e.target.id
+    let userID = sessionStorage.getItem("id").trim()
+    let followID = e.target.id.trim()
 
     API.addContact(userID, followID).then(res =>{
       console.log(res);
@@ -79,7 +79,7 @@ function ECard({ person }) {
             <Modal.Title>Scan to Add!</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <QR userID={QRState} />
+            <QR userID={QRState} className="qrCode"/>
             <Row>
             <a href={"tel:"+obj.pNumber} className="modalLink">Phone Number</a>
             <a href={"mailto:"+obj.email} className="modalLink">Email</a>
