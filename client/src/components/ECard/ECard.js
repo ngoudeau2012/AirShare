@@ -34,8 +34,9 @@ function ECard({ person }) {
   };
 
   return (
-    <Card>
-      <Image className="profileImage" src={obj.photoURL} />
+    <Col lg={4} sm={12}>
+    <Card className="card">
+      <Image className="eCardImage" src={obj.photoURL} />
       <Card.Body>
         <Card.Title className="userName">{obj.name}</Card.Title>
         <p className="careerInfo">
@@ -70,6 +71,8 @@ function ECard({ person }) {
         </Modal>{" "}
       </Card.Body>
     </Card>
+    </Col>
+    
   );
 }
 
