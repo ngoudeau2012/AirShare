@@ -8,7 +8,11 @@ import "./form.css";
 
 function CreateProfileForm({ onChange, profile, submitProfile, handleUpload }) {
   return (
+<<<<<<< HEAD
     <Form>
+=======
+    <Form enctype="multipart/form-data" className="animate__animated animate__fadeInUp" style={{color: "white", border: "10px solid #1b262c", padding: "10px"}}>
+>>>>>>> 6874c314af8f47915271b05576526c1ba626b86c
       <Row className="formRow">
         <Col>
           <p className="formLabel">Profile Photo Url</p>

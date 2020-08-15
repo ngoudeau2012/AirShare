@@ -1,7 +1,7 @@
-.profileImage{
+.eCardImage{
     object-fit: cover;
   width:100%;
-  height: 100px;
+  height: 350px;
     
 }
 .container{
@@ -24,4 +24,8 @@
 }
 .userName{
     margin-bottom: .25em;
+}
+.card{
+    margin: 1em;
+    min-height: 450px;
 }

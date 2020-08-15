@@ -21,7 +21,7 @@ function CreateProfile() {
     company: "",
     position: "",
     bio: "",
-    uploadPhoto: undefined,
+    uploadPhoto: "",
   });
 
   useEffect(() => {
