@@ -12,7 +12,7 @@ module.exports.contactFilter = async function (x, y) {
       // Map and Decrypt and Push to Object
       for (info of item.information) {
         if (info.substring(0, 2) == "ph") {
-          obj.push({ photoURL: cryptr.decrypt(info.substring(2)) });
+          obj.push({ photoURL: info.substring(2) });
         }
         if (info.substring(0, 2) == "po") {
           obj.push({ position: cryptr.decrypt(info.substring(2)) });
@@ -25,6 +25,9 @@ module.exports.contactFilter = async function (x, y) {
         }
         if (info.substring(0, 2) == "li") {
           obj.push({ linkedIn: cryptr.decrypt(info.substring(2)) });
+        }
+        if (info.substring(0, 2) == "pN") {
+          obj.push({ pNumber: cryptr.decrypt(info.substring(2)) });
         }
       }
       y.push(obj);
