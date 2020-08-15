@@ -17,7 +17,7 @@ function CreateProfile(){
         name: "",
         linkedIn: "",
         photoURL:"",
-        phoneNumber: "",
+        pNumber: "",
         company: "",
         position:"",
         bio: "",
