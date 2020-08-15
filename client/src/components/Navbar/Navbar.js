@@ -43,6 +43,9 @@ function Navbar() {
         <Link className="nav-item nav-link" onClick={handleLogOut}>
               Log Out
             </Link>
+            <Link to="/sign-up"className="nav-item nav-link">
+              Edit Profile
+            </Link>
         </div>
       </nav>
     </div>

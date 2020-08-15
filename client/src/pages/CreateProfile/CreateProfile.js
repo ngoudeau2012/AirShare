@@ -16,12 +16,12 @@ function CreateProfile() {
   const [formState, setFormState] = useState({
     name: "",
     linkedIn: "",
-    photoURL: "",
+    // photoURL: "",
     pNumber: "",
     company: "",
     position: "",
     bio: "",
-    uploadPhoto: "",
+    uploadPhoto: "https://cdn1.iconfinder.com/data/icons/technology-devices-2/100/Profile-512.png",
   });
 
   useEffect(() => {
@@ -59,7 +59,7 @@ function CreateProfile() {
     getBase64(file).then((base64) => {
       console.debug("file stored", base64);
       console.log(base64);
-      obj = base64;
+      return obj = base64;
     });
     console.log(obj);
     console.log(e.target.name);

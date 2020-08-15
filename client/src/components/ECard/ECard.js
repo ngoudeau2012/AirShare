@@ -27,8 +27,10 @@ function ECard({ person }) {
   const handleFollow = (e => {
     let userID = sessionStorage.getItem("id").trim()
     let followID = e.target.id.trim()
+    console.log(userID)
+    console.log(followID)
 
-    API.addContact(userID, followID).then(res =>{
+    API.addContact(userID, {contacts: followID}).then(res =>{
       console.log(res);
       // setFollowClickedState({animate__flip: "true"})
     })
@@ -67,7 +69,7 @@ function ECard({ person }) {
         <i class="fas fa-share-alt-square"></i>
         </Card.Link>
         <Card.Link variant="primary" id={obj.id} onClick={handleFollow} className={"animate_animated "}>
-        <i class="fas fa-plus-square"></i>
+        <i class="fas fa-plus-square" id={obj.id}></i>
         </Card.Link>
           </Col>
         
