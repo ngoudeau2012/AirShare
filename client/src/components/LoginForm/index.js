@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import API from "../../utils/API"
+import { Alert } from "react-bootstrap";
 
 function LoginForm() {
 
@@ -7,6 +8,8 @@ function LoginForm() {
       email:"",
       password:""
     })  
+
+    const [alertState, setAlertState] = useState(false)  
 
     const handleOnChange = e =>{
       setLoginState({...loginState, [e.target.name]: e.target.value})
@@ -22,6 +25,7 @@ function LoginForm() {
               window.location.href = "/network"
             }).catch(err => {
               console.log("Login Error", err)
+              setAlertState(true)
             })
             return
           case "signUp":
@@ -74,6 +78,9 @@ function LoginForm() {
         </div>
         <br></br>
       </form>
+      <Alert ariant="danger" show={alertState}>
+    Wrong email or password
+  </Alert>
     </div>
     </div>
   );

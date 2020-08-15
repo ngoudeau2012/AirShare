@@ -36,5 +36,9 @@
 }
 
 .modalLink{
-    /* margin: 1em 1em */
+    margin: 1em 1em
+}
+
+canvas{
+    margin-left: 2em
 }

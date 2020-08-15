@@ -1,13 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import session from "express-session";
 
 function Navbar() {
+
+  const handleLogOut = (e =>{
+    sessionStorage.setItem("id", "")
+    window.location.href = "/"
+  })
+
   return (
     <div>
       <div></div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Link to="/" className="navbar-brand">
+        <Link to="/network" className="navbar-brand">
           AirShare
         </Link>
 
@@ -31,6 +38,14 @@ function Navbar() {
               Profile
             </Link>
           </div>
+        </div>
+        <div className="justify-content-end">
+        <Link className="nav-item nav-link" onClick={handleLogOut}>
+              Log Out
+            </Link>
+            <Link to="/sign-up"className="nav-item nav-link">
+              Edit Profile
+            </Link>
         </div>
       </nav>
     </div>
