@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/ngoudeau2012/AirShare">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="assets/logo.jpg" alt="Logo" width="150" height="150">
   </a>
 
   <h3 align="center">AirShare</h3>
@@ -10,14 +10,11 @@
   <p align="center">
     Electronic business card powered on QR Code generator and blockchain components.
     <br />
-    <a href="https://github.com/ngoudeau2012/AirShare"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/ngoudeau2012/AirShare">View Demo</a>
-    ·
-    <a href="https://github.com/ngoudeau2012/AirShare/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/ngoudeau2012/AirShare/issues">Request Feature</a>
+    <img src="assets/1.png" alt="Login Page Image" width="45%" style="margin: 10px;"/>
+<img src="assets/2.png" alt="Dashboard Image" width="45%" style="margin: 10px;"/><br>
+<img src="assets/3.png" alt="Homepage Image" width="45%" style="margin: 10px;"/>
+<img src="assets/4.png" alt="Spending Page Image" width="45%" style="margin: 5px;"/><br>
+<img src="assets/5.png" alt="Spending Page Image" width="90%" style="margin: 5px;"/><br>
   </p>
 </p>
 
@@ -41,7 +38,9 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!-- GIF -->
+
+<img src="assets/airshare.gif" alt="Spending Page Image" width="90%" style="margin: 5px;"/><br>
 
 A revolutionary user-friendly electronic business card application powered by QR Code generator and block chain components:
 
@@ -143,11 +142,7 @@ Project Link: [https://github.com/ngoudeau2012/AirShar](https://github.com/ngoud
 ![GitHub last commit](https://img.shields.io/github/last-commit/ngoudeau2012/AirShare)
 ![contributors-shield](https://img.shields.io/github/contributors/ngoudeau2012/AirShare)
 ![forks-shield](https://img.shields.io/github/forks/ngoudeau2012/AirShare)
-![forks-url](https://github.com/ngoudeau2012/AirShare/network/members)
-![stars-shield](https://img.shields.io/github/stars/ngoudeau2012/AirShare)
-![stars-url](https://github.com/ngoudeau2012/AirShare/stargazers)
 ![issues-shield](https://img.shields.io/github/issues/ngoudeau2012/AirShare.svg?style=flat-square)
-![issues-url](https://github.com/ngoudeau2012/AirShare/issues)
 ![license-shield](https://img.shields.io/github/license/ngoudeau2012/AirShare.svg?style=flat-square)
 ![coverage](https://img.shields.io/badge/coverage-80%25-yellowgreen)
 ![version](https://img.shields.io/badge/version-1.1.3-blue)
