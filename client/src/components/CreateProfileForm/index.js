@@ -1,18 +1,13 @@
-import React, { useState } from "react";
+import React  from "react";
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
-import FormGroup from "react-bootstrap/esm/FormGroup";
-import { FormLabel, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "./form.css";
 
 function CreateProfileForm({ onChange, profile, submitProfile, handleUpload }) {
   return (
-<<<<<<< HEAD
-    <Form>
-=======
     <Form enctype="multipart/form-data" className="animate__animated animate__fadeInUp" style={{color: "white", border: "10px solid #1b262c", padding: "10px"}}>
->>>>>>> 6874c314af8f47915271b05576526c1ba626b86c
       <Row className="formRow">
         <Col>
           <p className="formLabel">Profile Photo Url</p>

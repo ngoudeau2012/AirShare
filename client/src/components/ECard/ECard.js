@@ -13,6 +13,7 @@ import {
 } from "react-bootstrap";
 import "./ECard.css";
 import QR from "../QRCode/QRCode";
+import API from "../../utils/API"
 
 function ECard({ person }) {
   let obj = {};
@@ -22,6 +23,19 @@ function ECard({ person }) {
     }
   });
 
+  // const [followClicked,setFollowClickedState]= useState ("animate__flip")
+  const handleFollow = (e => {
+    let userID = sessionStorage.getItem("id")
+    let followID = e.target.id
+
+    API.addContact(userID, followID).then(res =>{
+      console.log(res);
+      // setFollowClickedState({animate__flip: "true"})
+    })
+    .catch(err => {
+      console.log("Error adding contact")
+    })
+  })
   const [show, setShow] = useState(false);
   const [QRState, useQRState] = useState([]);
   const handleClose = () => {
@@ -35,24 +49,31 @@ function ECard({ person }) {
 
   return (
     <Col lg={4} sm={12}>
-    <Card className="card">
+    <Card className="card animate__animated animate__fadeInDown eCard">
       <Image className="eCardImage" src={obj.photoURL} />
       <Card.Body>
         <Card.Title className="userName">{obj.name}</Card.Title>
         <p className="careerInfo">
           {obj.position} at {obj.company}
         </p>
-        <Card.Link>
-          <a href={obj.linkedIn}>
+        <Row>
+          <Col>
+          <Card.Link>
+          <a href={obj.linkedIn} className>
             <i className="fab fa-linkedin"></i>
           </a>
         </Card.Link>
-        {/* QR Code */}
-        {/* Open */}
-        <Button variant="primary" id={obj.id} onClick={handleShow}>
-          Launch demo modal
-        </Button>
-        {/* Close */}
+        <Card.Link variant="primary" id={obj.id} onClick={handleShow}>
+        <i class="fas fa-share-alt-square"></i>
+        </Card.Link>
+        <Card.Link variant="primary" id={obj.id} onClick={handleFollow} className={"animate_animated "}>
+        <i class="fas fa-plus-square"></i>
+        </Card.Link>
+          </Col>
+        
+        </Row>
+        
+        
         <Modal show={show} onHide={handleClose} animation={false}>
           <Modal.Header closeButton>
             <Modal.Title>Scan to Add!</Modal.Title>

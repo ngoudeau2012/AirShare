@@ -19,6 +19,7 @@ function LoginForm() {
             API.loginUser({ email : loginState.email , password: loginState.password }).then(res =>{
               console.log(res);
               sessionStorage.setItem("id",res.data._id)
+              window.location.search = "/network"
             }).catch(err => {
               console.log("Login Error", err)
             })
@@ -28,6 +29,7 @@ function LoginForm() {
             API.newUser({ email : loginState.email , password: loginState.password }).then(res => {
               console.log(res)
               sessionStorage.setItem("id",res.data._id)
+              window.location.search = "/sign-up"
             }).catch(err => {
               console.log("Sign-up Error", err)
             })
@@ -66,7 +68,7 @@ function LoginForm() {
         <button type="submit" name="login" className="btn btn-primary col-3 mx-2" onClick={handleSubmit}>
           Login
         </button>
-        <button type="submit" name= "signUp" className="btn btn-primary col-3 mx-2" onClick={handleSubmit}>
+        <button type="submit"  name= "signUp" className="btn btn-primary col-3 mx-2" onClick={handleSubmit}>
           Sign Up
         </button>
         </div>

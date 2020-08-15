@@ -29,9 +29,15 @@ function UserProfile() {
     const [userState, setUserState] = useState({})
     useEffect (() => {
       let userID = sessionStorage.getItem("id")
+      let obj = {}
       API.getAllUserInfo(userID).then(res => {
         console.log(res)
-        setUserState(res.data)
+        res.data.information.map(item => {
+          for (let [key, value] of Object.entries(item)) {
+            obj[key] = value;
+          }
+        })
+        setUserState(obj)
       }).catch(err => {
         console.log("Get users error:", err)
       })
@@ -56,7 +62,9 @@ function UserProfile() {
         <Container>
         <Row>
           <Col lg={5}>
-          {/* <ProfileCard /> */}
+          <ProfileCard 
+          profile={userState}
+          />
           </Col>
           <Col lg={7}>
           <Row>

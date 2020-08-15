@@ -53,11 +53,9 @@ function Contacts() {
 
       <Container>
         <Row>
-          {/* <Col xs={12} lg={3}> */}
             {userListState.map((item) => (
               <ECard person={item} />
             ))}
-          {/* </Col> */}
         </Row>
       </Container>
 
