@@ -123,7 +123,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 []
 
-Project Link: [https://github.com/ngoudeau2012/AirShar](https://github.com/ngoudeau2012/AirShar)
+Project Link: [https://github.com/ngoudeau2012/AirShare](https://github.com/ngoudeau2012/AirShare)
 
 <!-- ACKNOWLEDGEMENTS -->
 
