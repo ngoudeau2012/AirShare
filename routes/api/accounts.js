@@ -34,7 +34,7 @@ router.put("/:id/information", (req, res) => {
   for (let [key, value] of Object.entries(req.body)) {
     console.log("key, value");
     console.log(`${key}: ${value}`);
-    if (key.substring(0, 2) !== "ph") {
+    if (key.substring(0, 2) !== "up") {
       arr.push(`${key.substring(0, 2)}${cryptr.encrypt(value)}`);
     } else {
       arr.push(`${key.substring(0, 2)}${value}`);
